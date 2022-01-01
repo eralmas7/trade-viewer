@@ -3,12 +3,15 @@ package com.example.trade.viewer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
-import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
+
+import brave.sampler.Sampler;
 
 @SpringBootApplication
-@EnableDiscoveryClient 
+@EnableDiscoveryClient
+@EnableEurekaClient
 @EnableZuulProxy
 public class TradeViewerApplication {
 
@@ -17,7 +20,7 @@ public class TradeViewerApplication {
     }
 
     @Bean
-    public AlwaysSampler defaultSampler() {
-        return new AlwaysSampler();
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }
