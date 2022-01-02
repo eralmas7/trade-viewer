@@ -7,8 +7,9 @@ logging:
 spring:
   application:
     name: trade-viewer
-  config:
-    import: "optional:configserver:"
+  cloud:
+    config:
+      uri:  ${vcap.services.config-server.credentials.uri:http://cloud-config:8888}
   main:
     allow-bean-definition-overriding: "true"
 eureka:
