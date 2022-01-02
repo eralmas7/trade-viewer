@@ -1,9 +1,6 @@
 server:
   port: 8080
   
-logging:
-  level:
-    org.springframework: DEBUG
 spring:
   application:
     name: trade-viewer
@@ -15,3 +12,4 @@ spring:
 eureka:
     client:
         fetch-registry: true
+EUREKA_PORT_8761_TCP_ADDR: ${vcap.services.eureka-service.credentials.uri:localhost}
