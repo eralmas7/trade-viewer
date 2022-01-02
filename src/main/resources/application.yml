@@ -10,5 +10,6 @@ spring:
   main:
     allow-bean-definition-overriding: "true"
 eureka:
-    client:
-        fetch-registry: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
