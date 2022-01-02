@@ -12,4 +12,3 @@ spring:
 eureka:
     client:
         fetch-registry: true
-EUREKA_PORT_8761_TCP_ADDR: ${vcap.services.eureka-service.credentials.uri:localhost}
