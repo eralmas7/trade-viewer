@@ -11,5 +11,8 @@ spring:
     allow-bean-definition-overriding: "true"
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: true
+    enabled: false
+    
+logging:
+  level:
+    org.springframework: DEBUG
