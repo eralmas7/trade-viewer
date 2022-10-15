@@ -1,10 +1,10 @@
 angular.module('TradableIndicesApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('IndexDataCtrl', function ($scope, $http) {
 	  $http({
           method: 'GET',
-          url: '/index-service'
+          url: "indices/"
       }).then(function(response) {
-    	  $scope.tradeData = response.data;
+    	  $scope.indexData = response.data;
       }, function(response) {
     	  console.error('Error requesting races');
       });

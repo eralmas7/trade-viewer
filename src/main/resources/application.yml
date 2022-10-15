@@ -1,18 +1,16 @@
 server:
   port: 8080
   
-spring:
-  application:
-    name: trade-viewer
-  cloud:
-    config:
-      uri:  ${vcap.services.config-server.credentials.uri:http://cloud-config:8888}
-  main:
-    allow-bean-definition-overriding: "true"
-eureka:
-  client:
-    enabled: false
-    
 logging:
   level:
     org.springframework: DEBUG
+spring:
+  application:
+    name: trade-viewer
+  config:
+    import: "optional:configserver:"
+  main:
+    allow-bean-definition-overriding: "true"
+eureka:
+    client:
+        fetch-registry: true

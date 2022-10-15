@@ -1,4 +1,19 @@
-<h3>Trade Information</h3>
-<ul>
-	<li ng-repeat="trade in tradeData">{{trade.indexId}} {{trade.tradeId}}</li>
-</ul>
+<h3>Trade Information for {{indexId}}</h3>
+<table border = 1>
+	<tr>
+		<th>Index Id</th>
+		<th>Desk Id</th>
+		<th>Notional</th>
+		<th>Maturity</th>
+		<th>Trade Date</th>
+		<th>Price</th>
+	</tr>
+	<tr ng-repeat="trade in tradeData">
+		<td><a ng-href="#/constituent/{{trade.indexId}}" title='Constituents'>{{trade.tradeId}}</a></td>
+		<td>{{trade.deskId}}</td>
+		<td>{{trade.notional}}</td>
+		<td>{{trade.expiry}}</td>
+		<td>{{trade.tradeDate}}</td>
+		<td>{{trade.level}}</td>
+	</tr>
+</table>

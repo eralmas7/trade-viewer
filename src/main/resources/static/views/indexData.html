@@ -1,0 +1,15 @@
+<h3>Live Indices</h3>
+<table border = 1>
+	<tr>
+		<th>Index Id</th>
+		<th>Constituents</th>
+		<th>Inception Date</th>
+		<th>Price</th>
+	</tr>
+	<tr ng-repeat="index in indexData">
+		<td><a ng-href="#/trade/{{index.id}}" title='Trade Info'>{{index.name}}</a></td>
+		<td><a ng-href="#/constituent/{{index.id}}" title='Constituents'>constituents</a></td>
+		<td>{{index.inceptionDate}}</td>
+		<td>{{index.indexLevel}}</td>
+	</tr>
+</table>
